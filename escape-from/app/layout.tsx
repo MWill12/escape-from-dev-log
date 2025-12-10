@@ -1,9 +1,17 @@
-import { Geist} from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+
+export const EscapeFromFont = localFont({
+  src: [
+    {
+    path: '../public/fonts/EscapeFrom.ttf',
+    weight: '400',
+    style: 'normal',
+    },
+  ],
+  variable: '--font-escape-font',
+  display: 'swap',
 });
 
 export const metadata = {
@@ -17,9 +25,9 @@ type LayoutProps = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className={EscapeFromFont.variable}>
       <body
-        className={`${geistSans.variable} antialiased bg-white`}
+        className={`${EscapeFromFont.className} antialiased bg-white`}
       >
         {children}
       </body>

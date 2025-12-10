@@ -5,8 +5,8 @@ const Home = () => {
     <div className = "bg-green">
       <div className = "py-3">
         <Header title = ""/>
-        <Landing />
       </div>
+      <Landing />
     </div>
   )
 };
